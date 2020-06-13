@@ -31,6 +31,9 @@
                                         </constraints>
                                         <color key="tintColor" name="weatherColor"/>
                                         <state key="normal" image="location" catalog="system"/>
+                                        <connections>
+                                            <action selector="locationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jKm-c9-uHt"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qn0-XQ-hCG" userLabel="Search Text Field">
                                         <rect key="frame" x="40" y="0.0" width="314" height="30"/>
@@ -48,7 +51,7 @@
                                         <color key="tintColor" name="weatherColor"/>
                                         <state key="normal" image="magnifyingglass" catalog="system"/>
                                         <connections>
-                                            <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IU9-Kc-zfu"/>
+                                            <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IU9-Kc-zfu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -61,28 +64,28 @@
                                 </constraints>
                             </stackView>
                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XY5-ep-mdr" userLabel="Info Stack View">
-                                <rect key="frame" x="50" y="104" width="314" height="254"/>
+                                <rect key="frame" x="50" y="104" width="314" height="310"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5M-Q9-oK9" userLabel="Location Label">
-                                        <rect key="frame" x="123" y="0.0" width="68.5" height="23.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5M-Q9-oK9" userLabel="Location Label">
+                                        <rect key="frame" x="132" y="0.0" width="50" height="50"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" name="weatherColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.min.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oha-iz-Wc2" userLabel="Condition Image View">
-                                        <rect key="frame" x="104.5" y="24" width="105" height="104"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oha-iz-Wc2" userLabel="Condition Image View">
+                                        <rect key="frame" x="104.5" y="50" width="105" height="105"/>
                                         <color key="tintColor" name="weatherColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oha-iz-Wc2" secondAttribute="height" id="dyb-T0-hqp"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNn-DS-0zT" userLabel="Temperature Stack View">
-                                        <rect key="frame" x="0.0" y="128.5" width="314" height="105"/>
+                                        <rect key="frame" x="0.0" y="155" width="314" height="105"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUZ-Ml-ey2" userLabel="Temperature Label Superview">
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="105"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-D4-5Q8" userLabel="Temperature Label">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-D4-5Q8" userLabel="Temperature Label">
                                                         <rect key="frame" x="0.0" y="20" width="157" height="65"/>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="50"/>
                                                         <color key="textColor" name="weatherColor"/>
@@ -100,7 +103,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48I-9A-GBX" userLabel="Celsius Label Superview">
                                                 <rect key="frame" x="157" y="0.0" width="157" height="105"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-ex-F8v" userLabel="Celsius Label">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-ex-F8v" userLabel="Celsius Label">
                                                         <rect key="frame" x="0.0" y="20" width="157" height="65"/>
                                                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="50"/>
                                                         <color key="textColor" name="weatherColor"/>
@@ -117,8 +120,8 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear sky" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0L8-5Y-XVp" userLabel="Condition Label">
-                                        <rect key="frame" x="0.0" y="233.5" width="314" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0L8-5Y-XVp" userLabel="Condition Label">
+                                        <rect key="frame" x="0.0" y="260" width="314" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="weatherColor"/>
                                         <nil key="highlightedColor"/>
@@ -143,6 +146,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="celsiusLabel" destination="fBd-ex-F8v" id="8XA-Bs-Qd1"/>
                         <outlet property="conditionImageView" destination="oha-iz-Wc2" id="j5t-qy-Iiq"/>
                         <outlet property="conditionLabel" destination="0L8-5Y-XVp" id="NsF-Hc-TMG"/>
                         <outlet property="locationLabel" destination="b5M-Q9-oK9" id="7ox-wr-FQD"/>
@@ -159,7 +163,6 @@
         <image name="bg" width="649" height="485"/>
         <image name="location" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="sun.min.fill" catalog="system" width="128" height="121"/>
         <namedColor name="weatherColor">
             <color red="0.14200000464916229" green="0.15899999439716339" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

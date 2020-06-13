@@ -96,6 +96,7 @@
 		D4907EB22492A3AA00075E76 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D4907EB32493E31600075E76 /* WeatherManager.swift */,
 				D4907EA12492A35500075E76 /* WeatherViewController.swift */,
 			);
 			path = Controller;
@@ -104,7 +105,6 @@
 		D4907EB52493E31A00075E76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D4907EB32493E31600075E76 /* WeatherManager.swift */,
 				D456BF302493F49400E8CB04 /* WeatherData.swift */,
 				D456BF322494030A00E8CB04 /* WeatherModel.swift */,
 			);
