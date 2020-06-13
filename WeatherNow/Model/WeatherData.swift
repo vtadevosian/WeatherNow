@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct Sys: Codable {
+    let sunrise: Double
+    let sunset: Double
+}
+
 struct Main: Codable {
     let temp: Double
 }
@@ -23,4 +28,5 @@ struct WeatherData: Codable {
     let main: Main
     let weather: [Weather]
     let dt: Double
+    let sys: Sys
 }

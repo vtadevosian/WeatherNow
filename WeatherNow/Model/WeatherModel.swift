@@ -9,19 +9,21 @@
 import Foundation
 
 struct WeatherModel {
-    let conditionID: Int
     let cityName: String
     let temperature: Double
-    let dt: TimeInterval
+    let conditionID: Int
     let description: String
-    
-    var temperatureString: String {
-        return String(format: "%.1f", temperature)
+
+    let dt: TimeInterval
+    let sunriseTime: TimeInterval
+    let sunsetTime: TimeInterval
+
+    var isDaytime: Bool {
+        return sunriseTime...sunsetTime ~= dt
     }
     
-    var dateTime: String {
-        let dateZeroTZ = Date(timeIntervalSince1970: dt)
-        return ""
+    var roundedTemperature: String {
+        return String(format: "%.1f", temperature)
     }
     
     var conditionName: String {
@@ -51,9 +53,9 @@ struct WeatherModel {
         case 781:
             return "tornado"
         case 800:
-            return "sun.min.fill" // "moon.fill"
+            return isDaytime ? "sun.min.fill" : "moon.fill"
         case 801:
-            return "cloud.sun.fill" // "cloud.moon.fill"
+            return isDaytime ? "cloud.sun.fill" : "cloud.moon.fill"
         case 802:
             return "cloud"
         case 803, 804:

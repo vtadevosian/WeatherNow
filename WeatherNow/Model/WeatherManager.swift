@@ -41,17 +41,20 @@ struct WeatherManager {
         do {
             let weatherData = try decoder.decode(WeatherData.self, from: weatherData)
             
-            let id = weatherData.weather[0].id
+            let cityName = weatherData.name
+            let temperature = weatherData.main.temp
+            let conditionID = weatherData.weather[0].id
             let description = weatherData.weather[0].description.capitalizingFirstLetter()
-            let name = weatherData.name
-            let temp = weatherData.main.temp
             let datetime = weatherData.dt
-            
-            return WeatherModel(conditionID: id,
-                                cityName: name,
-                                temperature: temp,
+            let sunriseTime = weatherData.sys.sunrise
+            let sunsetTime = weatherData.sys.sunset
+            return WeatherModel(cityName: cityName,
+                                temperature: temperature,
+                                conditionID: conditionID,
+                                description: description,
                                 dt: datetime,
-                                description: description)
+                                sunriseTime: sunriseTime,
+                                sunsetTime: sunsetTime)
         } catch {
             delegate?.didFailWithError(error)
             return nil
